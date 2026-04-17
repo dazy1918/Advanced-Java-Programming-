@@ -1,12 +1,15 @@
-//Distinct Method
-package streamapi;
+//Remove Duplicate Characters from String
+    import java.util.stream.*;
 
-import java.util.List;
-
-public class streamapi4 {
+public class Q9 {
     public static void main(String[] args) {
-        List<Integer> l1 = List.of(10, 30, 45, 56, 10, 6, 31, 30);
-        l1.stream().distinct().forEach(System.out::println);
+        String str = "programming";
 
+        String result = str.chars()
+                .distinct()
+                .mapToObj(c -> String.valueOf((char)c))
+                .collect(Collectors.joining());
+
+        System.out.println(result);
     }
 }
